@@ -1,7 +1,7 @@
 import {useState} from "react";
 import {motion} from "framer-motion";
 
-const CardFlip = ({card, length}: { card: Card, length:number }) => {
+const CardFlip = ({card, length}: { card: Card, length: number }) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -25,16 +25,16 @@ const CardFlip = ({card, length}: { card: Card, length:number }) => {
         >
           {/* Front of the CARD*/}
           <div
-              className="relative flip-card-front flex flex-col w-[100%] h-[100%] bg-cover border-[1px] text-white rounded-lg p-4 bg-white dark:bg-black transition-colors duration-300 ease-in-out"
+              className="relative flip-card-front flex flex-col w-[100%] h-[100%] bg-cover border-[1px] text-white rounded-lg p-4 bg-white transition-colors duration-300 ease-in-out"
           >
             {/* Content */}
-            <div className="grow font-normal text-neutral-700 dark:text-neutral-200 flex justify-center items-center">
+            <div className="grow font-normal text-neutral-700 flex justify-center items-center">
               {card.front}
             </div>
             {/* Footer Page Number */}
             <div className="inline-flex items-center justify-center w-full">
               <span
-                  className="absolute px-3 text-xs font-medium text-gray-900 -translate-x-1/2 left-1/2 dark:text-white dark:bg-gray-900">{card.id} / {length}</span>
+                  className="absolute px-3 text-xs font-medium text-gray-900 -translate-x-1/2 left-1/2">{card.id} / {length}</span>
             </div>
             {/* LEFT */}
             <div
@@ -76,19 +76,19 @@ const CardFlip = ({card, length}: { card: Card, length:number }) => {
           </div>
 
 
-
           {/* Back of the card */}
           <div
               className="relative flip-card-back hatched-background flex flex-col w-[100%] h-[100%] bg-cover border-[1px] text-black rounded-lg p-4 hover:bg-neutral-50 hover:text-neutral-900 transition-colors duration-300 ease-in-out"
           >
             {/* Content */}
-            <div className="grow font-normal text-neutral-700 dark:text-neutral-200 flex justify-center items-center">
+            <div
+                className="grow font-normal text-neutral-700 flex justify-center items-center">
               {card.back}
             </div>
             {/* Footer Back Side */}
             <div className="inline-flex items-center justify-center w-full">
               <span
-                  className="absolute px-3 text-xs font-medium text-gray-900 -translate-x-1/2 left-1/2 dark:text-white dark:bg-gray-900">back side</span>
+                  className="absolute px-3 text-xs font-medium text-gray-900 -translate-x-1/2 left-1/2">back side</span>
             </div>
             {/* LEFT */}
             <div

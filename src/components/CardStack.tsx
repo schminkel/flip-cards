@@ -4,7 +4,7 @@ import {useState} from "react";
 
 
 export const CardStack = ({items}: { items: Card[] }) => {
-  const CARD_OFFSET = 3;
+  const CARD_OFFSET = 2;
   const SCALE_FACTOR = 0.02;
   const [cards, setCards] = useState<Card[]>(items);
 
@@ -50,14 +50,14 @@ export const CardStack = ({items}: { items: Card[] }) => {
         <div className="flex justify-center pt-6">
           <button
               onClick={back}
-              className="flex-none pt-2 pb-2 pl-6 pr-6 mt-4 bg-white dark:bg-black rounded-md border border-neutral-200 dark:border-white/[0.1] dark:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800 hover:text-neutral-900 dark:hover:text-neutral-50 transition-colors duration-300 ease-in-out active:scale-95"
+              className="flex-none pt-2 pb-2 pl-6 pr-6 mt-4 bg-white rounded-md border border-neutral-200   hover:bg-neutral-100 hover:text-neutral-900 transition-colors duration-300 ease-in-out active:scale-95"
           >
             ← Back
           </button>
           <div className="grow"></div>
           <button
               onClick={next}
-              className="flex-none pt-2 pb-2 pl-6 pr-6 mt-4 bg-white dark:bg-black rounded-md border border-neutral-200 dark:border-white/[0.1] dark:text-white hover:bg-neutral-50 dark:hover:bg-neutral-800 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors duration-300 ease-in-out active:scale-95"
+              className="flex-none pt-2 pb-2 pl-6 pr-6 mt-4 bg-white rounded-md border border-neutral-200  hover:bg-neutral-50  hover:text-neutral-900 transition-colors duration-300 ease-in-out active:scale-95"
           >
             Next →
           </button>
