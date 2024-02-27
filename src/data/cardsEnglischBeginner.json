@@ -1,0 +1,204 @@
+{
+  "cardsEnglischBeginner": [
+    {
+      "id": 1,
+      "front": "Hello",
+      "back": "Hallo"
+    },
+    {
+      "id": 2,
+      "front": "Goodbye",
+      "back": "Auf Wiedersehen"
+    },
+    {
+      "id": 3,
+      "front": "Please",
+      "back": "Bitte"
+    },
+    {
+      "id": 4,
+      "front": "Thank you",
+      "back": "Danke"
+    },
+    {
+      "id": 5,
+      "front": "Yes",
+      "back": "Ja"
+    },
+    {
+      "id": 6,
+      "front": "No",
+      "back": "Nein"
+    },
+    {
+      "id": 7,
+      "front": "Excuse me",
+      "back": "Entschuldigung"
+    },
+    {
+      "id": 8,
+      "front": "I'm sorry",
+      "back": "Es tut mir leid"
+    },
+    {
+      "id": 9,
+      "front": "How are you?",
+      "back": "Wie geht es dir?"
+    },
+    {
+      "id": 10,
+      "front": "I'm fine, thank you.",
+      "back": "Mir geht es gut, danke."
+    },
+    {
+      "id": 11,
+      "front": "What's your name?",
+      "back": "Wie heißt du?"
+    },
+    {
+      "id": 12,
+      "front": "My name is...",
+      "back": "Ich heiße..."
+    },
+    {
+      "id": 13,
+      "front": "I don't understand",
+      "back": "Ich verstehe nicht"
+    },
+    {
+      "id": 14,
+      "front": "Can you help me?",
+      "back": "Können Sie mir helfen?"
+    },
+    {
+      "id": 15,
+      "front": "I'm looking for...",
+      "back": "Ich suche..."
+    },
+    {
+      "id": 16,
+      "front": "How much is this?",
+      "back": "Wie viel kostet das?"
+    },
+    {
+      "id": 17,
+      "front": "Water",
+      "back": "Wasser"
+    },
+    {
+      "id": 18,
+      "front": "Food",
+      "back": "Essen"
+    },
+    {
+      "id": 19,
+      "front": "I would like...",
+      "back": "Ich möchte..."
+    },
+    {
+      "id": 20,
+      "front": "Where is the bathroom?",
+      "back": "Wo ist die Toilette?"
+    },
+    {
+      "id": 21,
+      "front": "I need a doctor",
+      "back": "Ich brauche einen Arzt"
+    },
+    {
+      "id": 22,
+      "front": "I'm lost",
+      "back": "Ich habe mich verirrt"
+    },
+    {
+      "id": 23,
+      "front": "I love you",
+      "back": "Ich liebe dich"
+    },
+    {
+      "id": 24,
+      "front": "I feel sick",
+      "back": "Mir ist übel"
+    },
+    {
+      "id": 25,
+      "front": "I'm tired",
+      "back": "Ich bin müde"
+    },
+    {
+      "id": 26,
+      "front": "What time is it?",
+      "back": "Wie spät ist es?"
+    },
+    {
+      "id": 27,
+      "front": "Can I have the bill, please?",
+      "back": "Kann ich bitte die Rechnung haben?"
+    },
+    {
+      "id": 28,
+      "front": "I don't speak German",
+      "back": "Ich spreche kein Deutsch"
+    },
+    {
+      "id": 29,
+      "front": "Do you speak English?",
+      "back": "Sprechen Sie Englisch?"
+    },
+    {
+      "id": 30,
+      "front": "Help!",
+      "back": "Hilfe!"
+    },
+    {
+      "id": 31,
+      "front": "Fire!",
+      "back": "Feuer!"
+    },
+    {
+      "id": 32,
+      "front": "Stop!",
+      "back": "Stopp!"
+    },
+    {
+      "id": 33,
+      "front": "Watch out!",
+      "back": "Pass auf!"
+    },
+    {
+      "id": 34,
+      "front": "I'm allergic to...",
+      "back": "Ich bin allergisch gegen..."
+    },
+    {
+      "id": 35,
+      "front": "I like...",
+      "back": "Ich mag..."
+    },
+    {
+      "id": 36,
+      "front": "I don't like...",
+      "back": "Ich mag nicht..."
+    },
+    {
+      "id": 37,
+      "front": "Good morning",
+      "back": "Guten Morgen"
+    },
+    {
+      "id": 38,
+      "front": "Good night",
+      "back": "Gute Nacht"
+    },
+    {
+      "id": 39,
+      "front": "How do you say ... in German?",
+      "back": "Wie sagt man ... auf Deutsch?"
+    },
+    {
+      "id": 40,
+      "front": "See you later",
+      "back": "Bis später"
+    }
+  ]
+}

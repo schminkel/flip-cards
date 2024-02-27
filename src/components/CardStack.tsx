@@ -1,25 +1,11 @@
-import React, {useState} from "react";
 import {motion} from "framer-motion";
 import CardFlip from "./CardFlip.tsx";
+import {useState} from "react";
 
-type Card = {
-  id: number;
-  name: string;
-  designation: string;
-  content: React.ReactNode;
-};
 
-export const CardStack = ({
-                            items,
-                            offset,
-                            scaleFactor,
-                          }: {
-  items: Card[];
-  offset?: number;
-  scaleFactor?: number;
-}) => {
-  const CARD_OFFSET = offset ?? 10;
-  const SCALE_FACTOR = scaleFactor ?? 0.06;
+export const CardStack = ({items}: { items: Card[] }) => {
+  const CARD_OFFSET = 3;
+  const SCALE_FACTOR = 0.02;
   const [cards, setCards] = useState<Card[]>(items);
 
   const back = () => {
