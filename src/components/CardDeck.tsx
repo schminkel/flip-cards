@@ -14,7 +14,6 @@ export function CardDeck() {
         <div className="pt-16 flex items-center justify-center w-full">
           <CardStack/>
         </div>
-        <button className="mt-8 focus:ring" id="focusTrickOnMobile">123</button>
       </>
   );
 }

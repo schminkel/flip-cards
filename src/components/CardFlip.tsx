@@ -7,17 +7,41 @@ const CardFlip = ({card, length}: { card: Card, length: number }) => {
 
   const [isFlipped, setIsFlipped] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
-  const [isNavigating, setIsNavigating] = useState(false);
 
   // @ts-ignore - cards is not used
   const [cards, setCards] = useAtom<Card[]>(cardsAtom);
 
+  /*
+   * This function removes the hover effect on touch devices
+   * to prevent the hover effect from sticking on the card
+   */
   useEffect(() => {
-    const focusTrickOnMobile = document.getElementById('focusTrickOnMobile');
-    if (focusTrickOnMobile) {
-      focusTrickOnMobile.focus();
+    function hasTouch() {
+      return 'ontouchstart' in document.documentElement
+          || navigator.maxTouchPoints > 0;
     }
-  }, [isNavigating]);
+
+    if (hasTouch()) {
+      try {
+        for (let si in document.styleSheets) {
+          const styleSheet = document.styleSheets[si];
+          if (!styleSheet.rules) continue;
+
+          for (let ri = styleSheet.rules.length - 1; ri >= 0; ri--) {
+            const cssStyleRule = styleSheet.rules[ri];
+            if (!(cssStyleRule instanceof CSSStyleRule)) {
+              continue;
+            }
+            if ((cssStyleRule as CSSStyleRule).selectorText.match(':hover')) {
+              styleSheet.deleteRule(ri);
+            }
+          }
+        }
+      } catch (ex) {
+      }
+    }
+  }, []);
+
 
   const back = () => {
     if (isFlipped) setIsFlipped(false);
@@ -26,7 +50,6 @@ const CardFlip = ({card, length}: { card: Card, length: number }) => {
       newArray.unshift(newArray.pop()!); // move the last element to the front
       return newArray;
     });
-    setIsNavigating(!isNavigating);
   }
 
   const next = () => {
@@ -36,7 +59,6 @@ const CardFlip = ({card, length}: { card: Card, length: number }) => {
       newArray.push(newArray.shift()!); // move the first element to the end
       return newArray;
     });
-    setIsNavigating(!isNavigating);
   }
 
   const handleFlip = () => {
