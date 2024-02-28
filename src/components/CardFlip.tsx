@@ -26,6 +26,7 @@ const CardFlip = ({card, length}: { card: Card, length: number }) => {
       newArray.unshift(newArray.pop()!); // move the last element to the front
       return newArray;
     });
+    setIsNavigating(!isNavigating);
   }
 
   const next = () => {
@@ -33,10 +34,9 @@ const CardFlip = ({card, length}: { card: Card, length: number }) => {
     setCards((prevCards: Card[]) => {
       const newArray = [...prevCards]; // create a copy of the array
       newArray.push(newArray.shift()!); // move the first element to the end
-      setIsNavigating(true);
       return newArray;
     });
-    setIsNavigating(false);
+    setIsNavigating(!isNavigating);
   }
 
   const handleFlip = () => {
