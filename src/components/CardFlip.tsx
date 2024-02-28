@@ -7,6 +7,7 @@ const CardFlip = ({card, length}: { card: Card, length: number }) => {
 
   const [isFlipped, setIsFlipped] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [isNavigating, setIsNavigating] = useState(false);
 
   // @ts-ignore - cards is not used
   const [cards, setCards] = useAtom<Card[]>(cardsAtom);
@@ -16,8 +17,7 @@ const CardFlip = ({card, length}: { card: Card, length: number }) => {
     if (focusTrickOnMobile) {
       focusTrickOnMobile.focus();
     }
-
-  }, [cards]);
+  }, [isNavigating]);
 
   const back = () => {
     if (isFlipped) setIsFlipped(false);
@@ -33,9 +33,10 @@ const CardFlip = ({card, length}: { card: Card, length: number }) => {
     setCards((prevCards: Card[]) => {
       const newArray = [...prevCards]; // create a copy of the array
       newArray.push(newArray.shift()!); // move the first element to the end
+      setIsNavigating(true);
       return newArray;
     });
-
+    setIsNavigating(false);
   }
 
   const handleFlip = () => {
