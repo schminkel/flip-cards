@@ -12,7 +12,10 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Poppins', ...defaultTheme.fontFamily.sans]
-      }
+      },
+      screens: {
+        support: { raw: '(hover: hover)' }, // check if hover is supported on the device
+      },
     },
   },
   plugins: [],
