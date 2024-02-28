@@ -1,11 +1,36 @@
 import {useState} from "react";
 import {motion} from "framer-motion";
+import {useAtom} from "jotai/index";
+import {cardsAtom} from "./CardDeck.tsx";
 
 const CardFlip = ({card, length}: { card: Card, length: number }) => {
+
   const [isFlipped, setIsFlipped] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
 
-  function handleFlip() {
+  // @ts-ignore - cards is not used
+  const [cards, setCards] = useAtom<Card[]>(cardsAtom);
+
+  const back = () => {
+    if (isFlipped) setIsFlipped(false);
+    setCards((prevCards: Card[]) => {
+      const newArray = [...prevCards]; // create a copy of the array
+      newArray.unshift(newArray.pop()!); // move the last element to the front
+      return newArray;
+    });
+  }
+
+  const next = () => {
+    if (isFlipped) setIsFlipped(false);
+    setCards((prevCards: Card[]) => {
+      const newArray = [...prevCards]; // create a copy of the array
+      newArray.push(newArray.shift()!); // move the first element to the end
+      return newArray;
+    });
+
+  }
+
+  const handleFlip = () => {
     if (!isAnimating) {
       setIsFlipped(!isFlipped);
       setIsAnimating(true);
@@ -38,7 +63,8 @@ const CardFlip = ({card, length}: { card: Card, length: number }) => {
             </div>
             {/* LEFT */}
             <div
-                className="group absolute top-0 left-0 w-1/4 h-full hover:bg-gray-50 opacity-80 rounded-lg cursor-pointer text-black">
+                className="group absolute top-0 left-0 w-1/4 h-full hover:bg-gray-50 opacity-80 rounded-lg cursor-pointer text-black"
+                onClick={back}>
               <div
                   className="hidden group-hover:flex group-hover:items-center group-hover:justify-center group-hover:w-full group-hover:h-full">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -63,7 +89,8 @@ const CardFlip = ({card, length}: { card: Card, length: number }) => {
             </div>
             {/* RIGHT */}
             <div
-                className="group absolute top-0 right-0 w-1/4 h-full hover:bg-gray-50 opacity-80 rounded-lg cursor-pointer text-black">
+                className="group absolute top-0 right-0 w-1/4 h-full hover:bg-gray-50 opacity-80 rounded-lg cursor-pointer text-black"
+                onClick={next}>
               <div
                   className="hidden group-hover:flex group-hover:items-center group-hover:justify-center group-hover:w-full group-hover:h-full">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -92,7 +119,8 @@ const CardFlip = ({card, length}: { card: Card, length: number }) => {
             </div>
             {/* LEFT */}
             <div
-                className="group absolute top-0 left-0 w-1/4 h-full hover:bg-gray-50 opacity-80 rounded-lg cursor-pointer text-black">
+                className="group absolute top-0 left-0 w-1/4 h-full hover:bg-gray-50 opacity-80 rounded-lg cursor-pointer text-black"
+                onClick={back}>
               <div
                   className="hidden group-hover:flex group-hover:items-center group-hover:justify-center group-hover:w-full group-hover:h-full">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -117,7 +145,8 @@ const CardFlip = ({card, length}: { card: Card, length: number }) => {
             </div>
             {/* RIGHT */}
             <div
-                className="group absolute top-0 right-0 w-1/4 h-full hover:bg-gray-50 opacity-80 rounded-lg cursor-pointer text-black">
+                className="group absolute top-0 right-0 w-1/4 h-full hover:bg-gray-50 opacity-80 rounded-lg cursor-pointer text-black"
+                onClick={next}>
               <div
                   className="hidden group-hover:flex group-hover:items-center group-hover:justify-center group-hover:w-full group-hover:h-full">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"

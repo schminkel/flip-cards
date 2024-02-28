@@ -1,5 +1,9 @@
+//import {atom} from 'jotai';
 import {CardStack} from "./CardStack";
 import * as data from './../data/cardsEnglischBeginner.json';
+import {atomWithStorage} from "jotai/utils";
+
+export const cardsAtom = atomWithStorage<Card[]>("CardsStore", data.cardsEnglischBeginner);
 
 export function CardDeck() {
   return (
@@ -8,7 +12,7 @@ export function CardDeck() {
           Flip Cards
         </div>
         <div className="pt-16 flex items-center justify-center w-full">
-          <CardStack items={data.cardsEnglischBeginner}/>
+          <CardStack/>
         </div>
       </>
   );
