@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {motion} from "framer-motion";
 import {useAtom} from "jotai/index";
 import {cardsAtom} from "./CardDeck.tsx";
@@ -10,6 +10,14 @@ const CardFlip = ({card, length}: { card: Card, length: number }) => {
 
   // @ts-ignore - cards is not used
   const [cards, setCards] = useAtom<Card[]>(cardsAtom);
+
+  useEffect(() => {
+    const focusTrickOnMobile = document.getElementById('focusTrickOnMobile');
+    if (focusTrickOnMobile) {
+      focusTrickOnMobile.focus();
+    }
+
+  }, [cards]);
 
   const back = () => {
     if (isFlipped) setIsFlipped(false);
@@ -159,6 +167,7 @@ const CardFlip = ({card, length}: { card: Card, length: number }) => {
           </div>
 
         </motion.div>
+        <div id="focusTrickOnMobile"/>
       </button>
   );
 };
